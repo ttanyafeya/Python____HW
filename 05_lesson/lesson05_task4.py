@@ -31,6 +31,8 @@ search_field.send_keys("SuperSecretPassword!")
 button = driver.find_element(By.CSS_SELECTOR, "#login > button > i")
 button.click()
 
+flash = driver.find_element(By.CSS_SELECTOR, "div#flash")
+print(flash.text)
 
 sleep(5)
 driver.quit()

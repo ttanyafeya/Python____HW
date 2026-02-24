@@ -24,11 +24,11 @@ driver.get("http://the-internet.herokuapp.com/inputs")
 search_field = "input"
 search_field = driver.find_element(By.CSS_SELECTOR, "input")
 
-search_field.send_keys("100")
+search_field.send_keys("Sky")
 sleep(5)
 search_field.clear()
 
-search_field.send_keys("99")
+search_field.send_keys("Pro")
 sleep(5)
 search_field.clear()
 
