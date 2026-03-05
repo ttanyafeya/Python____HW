@@ -16,12 +16,17 @@ service=ChromeService(ChromeDriverManager().install()))
 
 driver.get("https://bonigarcia.dev/selenium-webdriver-java/loading-images.html")
 
+pictures = WebDriverWait(driver, 20).until(
+     EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div#image-container.col-12.py-2 img#landscape'))
 
-pictures = WebDriverWait(driver,20).until(
-  EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div#image-container.col-12.py-2 img#landscape'))
-)
+ )
 
-src = driver.find_element(By.CSS_SELECTOR, "img#award").get_attribute("src")
+pictures = driver.find_elements(By.TAG_NAME, "img")
+
+third_img = pictures[2]  # третья картинка в списке
+
+src = third_img.get_attribute("src")
+
 print(src)
 
 driver.quit()
